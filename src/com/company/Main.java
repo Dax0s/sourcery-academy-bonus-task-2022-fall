@@ -15,7 +15,8 @@ public class Main
         {
             ArrayList<String> data = readFile("input.txt");
 
-            writeFile("output.txt", data);
+//            writeFile("output.txt", data);
+            printAnswer(data);
         }
         catch (FileNotFoundException e)
         {
@@ -61,7 +62,6 @@ public class Main
             {
                 if (checkIfMoreThan10(data.get(i)))
                 {
-                    System.out.println(data.get(i));
                     writer.write(data.get(i) + "\n");
                 }
             }
@@ -131,6 +131,17 @@ public class Main
         catch (NumberFormatException e)
         {
             return false;
+        }
+    }
+
+    public static void printAnswer(ArrayList<String> data)
+    {
+        for (int i = 0; i < data.toArray().length; i++)
+        {
+            if (checkIfMoreThan10(data.get(i)))
+            {
+                System.out.println(data.get(i));
+            }
         }
     }
 }
